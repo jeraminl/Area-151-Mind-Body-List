@@ -1,17 +1,44 @@
 <ion-header>
   <ion-toolbar>
+      
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button slot="start"></ion-menu-button>
     </ion-buttons>
+      
+      <ion-buttons slot="secondary">
+          <ion-button (click)="addTask()">
+              <ion-icon name="add" slot="icon-only"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+      
     <ion-title>
-      Home
+      Body List
     </ion-title>
+      
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-    <ion-item>
-        <ion-label>This is a test task</ion-label>
+    <ion-item *ngFor="let task of bodyArray; let i=index; trackBy:trackByFn">
+        <ion-input [(ngModel)]="bodyArray[i]" value={{task}}></ion-input>
         <ion-checkbox slot="start"></ion-checkbox>
     </ion-item>
 </ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-tabs>
+            <ion-tab-bar slot="bottom">
+                <ion-tab-button tab="body">
+                    <ion-icon name="body"></ion-icon>
+                    <ion-label>Body</ion-label>
+                </ion-tab-button>
+                
+                <ion-tab-button tab="mind" (click)="goToMindList()">
+                    <ion-icon name="heart"></ion-icon>
+                    <ion-label>Mind</ion-label>
+                </ion-tab-button>
+            </ion-tab-bar>
+        </ion-tabs>
+    </ion-toolbar>
+</ion-footer>

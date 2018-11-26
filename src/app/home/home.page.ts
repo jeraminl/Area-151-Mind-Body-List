@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { BodyData } from "../data/body-data";
+import { ChecklistService } from "../services/checklist-service";
 
 @Component({
   selector: 'app-home',
@@ -6,5 +9,21 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-    bodyArray:string[];
+    bodyArray:string[] = [""];
+
+    constructor(public navCtrl: NavController){
+    
+    }
+    
+    addTask(){
+        this.bodyArray.push("");
+    }
+    
+    trackByFn(index: any, item: any) {
+        return index;
+    }
+    
+    goToMindList(){
+        this.navCtrl.navigateForward("/MindChecklist");
+    }
 }
