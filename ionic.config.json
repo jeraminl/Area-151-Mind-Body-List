@@ -1,5 +1,7 @@
 {
   "name": "MindBodyLists",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

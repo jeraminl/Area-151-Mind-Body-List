@@ -21,7 +21,10 @@
 <ion-content padding>
     <ion-item *ngFor="let task of bodyArray; let i=index; trackBy:trackByFn">
         <ion-input [(ngModel)]="bodyArray[i]" value={{task}}></ion-input>
-        <ion-checkbox slot="start"></ion-checkbox>
+        <ion-checkbox slot="start" *ngIf="bodyArray[i] != ''; else EmptyTask"></ion-checkbox>
+        <ng-template #EmptyTask>
+            <ion-checkbox slot="start" disabled="true"></ion-checkbox>
+        </ng-template>
     </ion-item>
 </ion-content>
 

@@ -1,22 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { MindData } from "../data/mind-data";
-import { ChecklistService } from "../services/checklist-service";
+import { ChecklistService } from "../services/checklist.service";
 
 @Component({
   selector: 'app-mind-checklist',
   templateUrl: './mind-checklist.page.html',
   styleUrls: ['./mind-checklist.page.scss'],
 })
-export class MindChecklistPage{
-    mindArray:string[] = [""];
+export class MindChecklistPage implements OnInit{
+    public static mindArray:string[] = [""];
 
-    constructor(public navCtrl:NavController){
+    constructor(public navCtrl:NavController, public checklistService:ChecklistService){
+    }
     
+    ngOnInit(){
     }
     
     addTask(){
-        this.mindArray.push("");
+        if(MindChecklistPage.mindArray[MindChecklistPage.mindArray.length - 1] != ""){
+            MindChecklistPage.mindArray.push("");
+        }
     }
     
     trackByFn(index: any, item: any) {
@@ -25,5 +28,9 @@ export class MindChecklistPage{
     
     goToBodyList(){
         this.navCtrl.navigateForward("/home");
+    }
+    
+    get mindArray(){
+        return MindChecklistPage.mindArray;
     }
 }

@@ -1,22 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { BodyData } from "../data/body-data";
-import { ChecklistService } from "../services/checklist-service";
+import { ChecklistService } from "../services/checklist.service";
+import { NativeAudio } from '@ionic-native/native-audio/ngx';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
-    bodyArray:string[] = [""];
+export class HomePage implements OnInit{
+    public static bodyArray:string[] = [""];
 
-    constructor(public navCtrl: NavController){
+    constructor(public navCtrl: NavController, public checklistService:ChecklistService){
+    }
     
+    ngOnInit(){
+        
     }
     
     addTask(){
-        this.bodyArray.push("");
+        if(HomePage.bodyArray[HomePage.bodyArray.length - 1] != ""){
+            HomePage.bodyArray.push("");
+        }
     }
     
     trackByFn(index: any, item: any) {
@@ -25,5 +30,9 @@ export class HomePage {
     
     goToMindList(){
         this.navCtrl.navigateForward("/MindChecklist");
+    }
+    
+    get bodyArray(){
+        return HomePage.bodyArray;
     }
 }
