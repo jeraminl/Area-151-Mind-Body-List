@@ -16,7 +16,7 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'Journal',
+      title: 'Diary',
       url: '/journal',
       icon: 'book'
     },
