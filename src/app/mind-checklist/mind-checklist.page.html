@@ -2,12 +2,12 @@
   <ion-toolbar>
       
     <ion-buttons slot="start">
-      <ion-menu-button slot="start"></ion-menu-button>
+      <ion-menu-button slot="start" color=secondary></ion-menu-button>
     </ion-buttons>
       
-      <ion-buttons slot="secondary">
+      <ion-buttons slot="end">
           <ion-button (click)="addTask()">
-              <ion-icon name="add" slot="icon-only"></ion-icon>
+              <ion-icon name="add" slot="icon-only" color=secondary></ion-icon>
           </ion-button>
       </ion-buttons>
       
@@ -19,9 +19,9 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-item *ngFor="let task of mindArray; let i=index; trackBy:trackByFn">
+    <ion-item *ngFor="let task of mindArray; let i=index; trackBy:trackByFn" class = checkTask>
         <ion-input [(ngModel)]="mindArray[i]" value={{task}}></ion-input>
-        <ion-checkbox slot="start" *ngIf="mindArray[i] != ''; else EmptyTask"></ion-checkbox>
+        <ion-checkbox color=primary slot="start" *ngIf="mindArray[i] != ''; else EmptyTask"></ion-checkbox>
         <ng-template #EmptyTask>
             <ion-checkbox slot="start" disabled="true"></ion-checkbox>
         </ng-template>
@@ -38,8 +38,8 @@
                 </ion-tab-button>
                 
                 <ion-tab-button tab="mind">
-                    <ion-icon name="heart"></ion-icon>
-                    <ion-label>Mind</ion-label>
+                    <ion-icon name="heart" color=secondary></ion-icon>
+                    <ion-label color=secondary>Mind</ion-label>
                 </ion-tab-button>
             </ion-tab-bar>
         </ion-tabs>

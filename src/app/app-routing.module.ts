@@ -16,7 +16,8 @@ const routes: Routes = [
     loadChildren: './list/list.module#ListPageModule'
   },
   { path: 'MindChecklist', loadChildren: './mind-checklist/mind-checklist.module#MindChecklistPageModule' },
-  { path: 'Settings', loadChildren: './settings/settings.module#SettingsPageModule' }
+  { path: 'Settings', loadChildren: './settings/settings.module#SettingsPageModule' },
+  { path: 'journal', loadChildren: './journal/journal.module#JournalPageModule' }
 ];
 
 @NgModule({

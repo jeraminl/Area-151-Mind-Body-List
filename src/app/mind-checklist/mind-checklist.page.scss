@@ -1,0 +1,23 @@
+ion-content{
+    --background: linear-gradient(0deg, #CE9FFC,#7367F0) !important;
+}
+
+.checkTask{
+    --background: transparent;
+}
+
+ion-checkbox{
+}
+
+ion-toolbar{
+    --background: white;
+}
+
+ion-tab-bar{
+    --background:white;
+}
+
+ion-input{
+    //$text-input-highlight-color-valid:white;
+    --background:transparent;
+}
