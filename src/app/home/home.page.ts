@@ -3,6 +3,8 @@ import { NavController } from '@ionic/angular';
 import { ChecklistService } from "../services/checklist.service";
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
 
+/*Notable bug: Program restricts adding another task if previous one is empty, but can be worked around by creating and filling many tasks, and them emptying them later. Possible solution is to use an *ngIf to remove the array element if the task is left empty.*/
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',

@@ -18,7 +18,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content padding>
     <ion-item *ngFor="let task of bodyArray; let i=index; trackBy:trackByFn" class = checkTask>
         <ion-input [(ngModel)]="bodyArray[i]" value={{task}}></ion-input>
         <ion-checkbox color=secondary slot="start" *ngIf="bodyArray[i] != ''; else EmptyTask"></ion-checkbox>

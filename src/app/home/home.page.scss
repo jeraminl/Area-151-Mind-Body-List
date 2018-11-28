@@ -6,8 +6,6 @@ ion-content{
     --background: transparent;
 }
 
-ion-checkbox{
-}
 
 ion-toolbar{
     --background: white;
@@ -20,4 +18,5 @@ ion-tab-bar{
 ion-input{
     //$text-input-highlight-color-valid:white;
     --background:transparent;
+    --color:white;
 }
