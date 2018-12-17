@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button slot="start" color=tertiary></ion-menu-button>
+    </ion-buttons>
+
+      <ion-buttons slot="end">
+          <ion-button>
+              <ion-label color=tertiary>Calendar</ion-label>
+          </ion-button>
+      </ion-buttons>
+
+    <ion-title>
+      Diary
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Diary Entry Recorded!</h1>
+  <ion-item lines="none">
+    <ion-button color=light (click)="goToDiary()">Write Another Entry</ion-button>
+  </ion-item>
+</ion-content>

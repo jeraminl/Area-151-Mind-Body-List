@@ -17,7 +17,9 @@ const routes: Routes = [
   },
   { path: 'MindChecklist', loadChildren: './mind-checklist/mind-checklist.module#MindChecklistPageModule' },
   { path: 'Settings', loadChildren: './settings/settings.module#SettingsPageModule' },
-  { path: 'journal', loadChildren: './journal/journal.module#JournalPageModule' }
+  { path: 'journal', loadChildren: './journal/journal.module#JournalPageModule' },  { path: 'diaryDates', loadChildren: './diary-dates/diary-dates.module#DiaryDatesPageModule' },
+  { path: 'entrySubmitted', loadChildren: './entry-submitted/entry-submitted.module#EntrySubmittedPageModule' }
+
 ];
 
 @NgModule({

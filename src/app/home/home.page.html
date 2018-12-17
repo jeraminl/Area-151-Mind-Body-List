@@ -1,20 +1,23 @@
 <ion-header>
   <ion-toolbar>
-      
+
     <ion-buttons slot="start">
       <ion-menu-button slot="start" color=primary></ion-menu-button>
     </ion-buttons>
-      
+
       <ion-buttons slot="end">
           <ion-button (click)="addTask()">
               <ion-icon name="add" slot="icon-only" color=primary></ion-icon>
           </ion-button>
+          <ion-button color=primary>
+              <ion-label>Theme</ion-label>
+          </ion-button>
       </ion-buttons>
-      
+
     <ion-title>
       Body List
     </ion-title>
-      
+
   </ion-toolbar>
 </ion-header>
 
@@ -36,7 +39,7 @@
                     <ion-icon name="body" color=primary></ion-icon>
                     <ion-label color=primary>Body</ion-label>
                 </ion-tab-button>
-                
+
                 <ion-tab-button tab="mind" (click)="goToMindList()">
                     <ion-icon name="heart"></ion-icon>
                     <ion-label>Mind</ion-label>
