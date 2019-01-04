@@ -6,12 +6,13 @@
     </ion-buttons>
 
       <ion-buttons slot="end">
+        <ion-button color=secondary>
+            <ion-label>Theme</ion-label>
+        </ion-button>
           <ion-button (click)="addTask()">
               <ion-icon name="add" slot="icon-only" color=secondary></ion-icon>
           </ion-button>
-          <ion-button color=secondary>
-              <ion-label>Theme</ion-label>
-          </ion-button>
+
       </ion-buttons>
 
     <ion-title>
@@ -43,6 +44,11 @@
                 <ion-tab-button tab="mind">
                     <ion-icon name="heart" color=secondary></ion-icon>
                     <ion-label color=secondary>Mind</ion-label>
+                </ion-tab-button>
+
+                <ion-tab-button tab="diary" (click)="goToDiary()">
+                    <ion-icon name="book"></ion-icon>
+                    <ion-label>Diary</ion-label>
                 </ion-tab-button>
             </ion-tab-bar>
         </ion-tabs>

@@ -31,4 +31,12 @@ export class JournalPage implements OnInit {
     }
   }
 
+  goToMindList(){
+      this.navCtrl.navigateForward("/MindChecklist");
+  }
+
+  goToBodyList(){
+      this.navCtrl.navigateForward("/home");
+  }
+
 }

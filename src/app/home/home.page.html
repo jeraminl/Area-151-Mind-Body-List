@@ -6,12 +6,13 @@
     </ion-buttons>
 
       <ion-buttons slot="end">
+        <ion-button color=primary>
+            <ion-label>Theme</ion-label>
+        </ion-button>
           <ion-button (click)="addTask()">
               <ion-icon name="add" slot="icon-only" color=primary></ion-icon>
           </ion-button>
-          <ion-button color=primary>
-              <ion-label>Theme</ion-label>
-          </ion-button>
+
       </ion-buttons>
 
     <ion-title>
@@ -22,8 +23,10 @@
 </ion-header>
 
 <ion-content padding>
+  <!-- <ion-label>{{storageValue}}</ion-label> -->
     <ion-item *ngFor="let task of bodyArray; let i=index; trackBy:trackByFn" class = checkTask>
-        <ion-input [(ngModel)]="bodyArray[i]" value={{task}}></ion-input>
+        <ion-input [(ngModel)]="bodyArray[i]" value={{task}}>{{handleStorage()}}
+        </ion-input>
         <ion-checkbox color=secondary slot="start" *ngIf="bodyArray[i] != ''; else EmptyTask"></ion-checkbox>
         <ng-template #EmptyTask>
             <ion-checkbox slot="start" disabled="true"></ion-checkbox>
@@ -43,6 +46,11 @@
                 <ion-tab-button tab="mind" (click)="goToMindList()">
                     <ion-icon name="heart"></ion-icon>
                     <ion-label>Mind</ion-label>
+                </ion-tab-button>
+
+                <ion-tab-button tab="diary" (click)="goToDiary()">
+                    <ion-icon name="book"></ion-icon>
+                    <ion-label>Diary</ion-label>
                 </ion-tab-button>
             </ion-tab-bar>
         </ion-tabs>

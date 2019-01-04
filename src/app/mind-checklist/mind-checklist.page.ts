@@ -14,24 +14,28 @@ export class MindChecklistPage implements OnInit{
 
     constructor(public navCtrl:NavController, public checklistService:ChecklistService){
     }
-    
+
     ngOnInit(){
     }
-    
+
     addTask(){
         if(MindChecklistPage.mindArray[MindChecklistPage.mindArray.length - 1] != ""){
             MindChecklistPage.mindArray.push("");
         }
     }
-    
+
     trackByFn(index: any, item: any) {
         return index;
     }
-    
+
     goToBodyList(){
         this.navCtrl.navigateForward("/home");
     }
-    
+
+    goToDiary(){
+      this.navCtrl.navigateForward("/journal");
+    }
+
     get mindArray(){
         return MindChecklistPage.mindArray;
     }

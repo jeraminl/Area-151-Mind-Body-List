@@ -16,11 +16,6 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'Diary',
-      url: '/journal',
-      icon: 'book'
-    },
-    {
       title: 'Ambiance',
       url: '/list',
       icon: 'musical-notes'

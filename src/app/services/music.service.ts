@@ -38,7 +38,7 @@ export class MusicService {
   //   volume: 1.0,
   //   preload:true,
   //   html5:true
-  });
+  //});
 
   constructor() {
   }

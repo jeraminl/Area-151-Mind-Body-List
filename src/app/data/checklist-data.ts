@@ -3,7 +3,7 @@ export class ChecklistData {
     dataType:string;
     dataInt:number;
     dataReturned;
-    
+
     day:string = this.today.getMonth() + "/" + this.today.getDate() + "/" + this.today.getFullYear();
-    
+
 }

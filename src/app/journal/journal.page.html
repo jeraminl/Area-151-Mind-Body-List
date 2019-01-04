@@ -26,3 +26,26 @@
     <ion-button color=light (click)="onSubmit()">Submit</ion-button>
   </ion-item>
 </ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-tabs>
+            <ion-tab-bar slot="bottom">
+                <ion-tab-button tab="body" (click)="goToBodyList()">
+                    <ion-icon name="body"></ion-icon>
+                    <ion-label>Body</ion-label>
+                </ion-tab-button>
+
+                <ion-tab-button tab="mind" (click)="goToMindList()">
+                    <ion-icon name="heart"></ion-icon>
+                    <ion-label>Mind</ion-label>
+                </ion-tab-button>
+
+                <ion-tab-button tab="diary">
+                    <ion-icon name="book" color=tertiary></ion-icon>
+                    <ion-label color=tertiary>Diary</ion-label>
+                </ion-tab-button>
+            </ion-tab-bar>
+        </ion-tabs>
+    </ion-toolbar>
+</ion-footer>
